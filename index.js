@@ -1,9 +1,11 @@
 import inquirer from 'inquirer';
 import fs from 'fs';
 
-const generateMarkDown = (UserInput) =>
+const generateMarkDown = (answers) => 
 
-JSON.stringify(UserInput)
+`${answers.project_title} 
+${answers.project_description}`
+
 
 //array of question object that the user will be asked
 //question layout:
@@ -38,7 +40,7 @@ const questions = [
 ]
 
 //console log for user experiance
-console.log('------Lets make a README together!------')
+console.log('\n------Lets make a README together!------\n')
 
 //prompt used to generate question in the CLI
 inquirer
@@ -48,10 +50,10 @@ inquirer
 
     const markDownTemplate = generateMarkDown(answers)
 
-    fs.writeFile(`${answers.project_title}.md`, markDownTemplate , (error) => {
+    fs.writeFile(`${answers.project_title}-README.md`, markDownTemplate , (error) => {
         return error
         ? console.log(error)
-        : console.log('success')
+        : console.log('\nSuccess - Happy Coding!\n----------------------------------------')
     })
 })
 
