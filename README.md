@@ -57,3 +57,6 @@ Please refer to the repo for information about the license.
 
 ---
 
+## Video showing app functionality
+
+https://www.loom.com/share/a321583044e54e2883c9961e5ca188e6
